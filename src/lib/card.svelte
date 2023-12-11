@@ -2,7 +2,6 @@
     export let title: string
     export let description: string = ""
     export let dayNumber: number;
-    export let selectedDay: any;
     export let parentHandleSelect: any;
     
     function handleSelect() {

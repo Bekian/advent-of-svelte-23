@@ -1,11 +1,7 @@
 <script lang="ts">
     import Card from "$lib/card.svelte";
-import "../app.css"
-
-    let currDay: number = 0
-    // the idea is to have a menu with leetcode style cards that display the different days in a menu
-    // then you can select the day you want to look at from there
-    // day 0 is the menu screen
+    import "../app.css"
+    import { writable } from "svelte/store";
     let days = [
         {"title": "Day 1", "description": "Naughty or Nice", "dayNumber": 1},
         {"title": "Day 2", "description": "Merry Munch-o-Meter", "dayNumber": 2},
@@ -18,14 +14,28 @@ import "../app.css"
         {"title": "Day 9", "description": "Heart of Christmas", "dayNumber": 9},
         {"title": "Day 10", "description": "Present Progress", "dayNumber": 10},
     ]
+
+    const selectedDay = writable(0);
+    function handleSelect(dayNumber: any) {
+        selectedDay.set(dayNumber);
+    }
 </script>
-<nav></nav>
+
 <div class="pt-5 flex flex-row flex-wrap w-3/4 ml-[17.5%]">
-    {#if currDay == 0}
+    {#if $selectedDay == 0}
         {#each days as day}
-            <Card title={day.title} description={day.description} dayNumber={day.dayNumber} />
+            <Card 
+                title={day.title} 
+                description={day.description} 
+                dayNumber={day.dayNumber}
+                selectedDay={selectedDay}
+                parentHandleSelect={handleSelect}
+            />
         {/each}
-    {:else if currDay == 1}
-        <div> day 1 </div>
+    {:else if $selectedDay == 1}
+    <button class="px-2 py-1 m-2 text-xs rounded bg-neutral-100" on:click={() => {
+        selectedDay.set(0)
+    }}> go back </button>
+        <div class="text-xl text-neutral-200"> day 1 </div>
     {/if}
 </div>

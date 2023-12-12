@@ -16,3 +16,6 @@
     - Added testData array of js objects to test my attempt for day 1
     - Changed margin for page back button, and rearranged the pages scripts so its more clean
     - Added some better formatting to the daypage so it looks a little nicer (very early wip)
+
+# Dec 12th '23 V0.0.15
+    - Added the real data into stores.ts

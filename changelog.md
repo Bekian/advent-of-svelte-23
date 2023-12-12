@@ -19,3 +19,4 @@
 
 # Dec 12th '23 V0.0.15
     - Added the real data into stores.ts
+    - Added descriptionDropdown component (wip)

@@ -1,8 +1,9 @@
 <script lang="ts">
-    import Card from "$lib/card.svelte";
-	import DayPage from "$lib/dayPage.svelte";
     import "../app.css"
     import { writable } from "svelte/store";
+
+    import Card from "$lib/card.svelte";
+	import DayPage from "$lib/dayPage.svelte";
     let days = [
         {"title": "Day 1", "subtitle": "Naughty or Nice", "dayNumber": 1, "description": "The Elves have been tirelessly creating presents all year round. They’re right on schedule, but today they’ve run into a big problem; the ancient system for tracking who’s been naughty or nice is out of commission. With the hundreds of thousands of letters from children piling up alongside their records of good and bad deeds, the Elves are in dire need of a modern solution. Your mission is to build a system for the elves, enabling them to input names and tally each childs deeds to keep track of whether they’re good or bad. You could even categorise these automatically as “naughty” and “nice.” Fortunately, the elves have been meticulous in their record-keeping and have a backup of all the current data in JSON format. You’ll need to import this data into your newly developed system."},
         {"title": "Day 2", "subtitle": "Merry Munch-o-Meter", "dayNumber": 2},
@@ -35,7 +36,7 @@
         {/each}
     </div>
 {:else}
-    <button class="px-2 py-1 m-2 text-xs rounded bg-neutral-100" on:click={() => {
+    <button class="px-2 py-1 m-5 text-xs rounded bg-neutral-100" on:click={() => {
         selectedDay.set(0)
     }}> go back </button>
     <div class="pt-5 flex flex-row flex-wrap w-3/4 ml-[17.5%]">

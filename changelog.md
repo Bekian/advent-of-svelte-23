@@ -20,3 +20,6 @@
 # Dec 12th '23 V0.0.15
     - Added the real data into stores.ts
     - Added descriptionDropdown component (wip)
+
+# Dec 15th '23 V0.0.16
+    - Added a selector to choose between Advent of Code and Advent of Svelte calendars

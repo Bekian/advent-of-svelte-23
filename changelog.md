@@ -23,3 +23,6 @@
 
 # Dec 15th '23 V0.0.16
     - Added a selector to choose between Advent of Code and Advent of Svelte calendars
+
+# Dec 20th '23 
+    - This project is on hold until the ui library is finished.
